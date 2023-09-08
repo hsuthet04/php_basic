@@ -1,0 +1,8 @@
+[
+  { "name": "pisi",
+    "age": 19,
+    "subject": "php" },
+  { "name": "ethu",
+    "age": 20,
+    "subject": "java" }
+]
