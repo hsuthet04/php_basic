@@ -1,0 +1,26 @@
+[
+    { "id": "1",
+      "name": "apple",
+      "creator": "0",
+      "email": "1111@gmail.com",
+      "password": "123"
+    },
+      { "id": "2",
+      "name": "orange",
+      "creator": "1",
+      "email": "2222@gmail.com",
+      "password": "456"
+    },
+      { "id": "3",
+      "name": "banana",
+      "creator": "2",
+      "email": "3333@gmail.com",
+      "password": "789"
+    },
+      { "id": "4",
+      "name": "mochi",
+      "creator": "2",
+      "email": "4444@gmail.com",
+      "password": "246"
+    }
+  ]

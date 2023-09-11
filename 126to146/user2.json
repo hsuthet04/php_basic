@@ -1,0 +1,26 @@
+[
+    { "id": "1",
+      "name": "pisi",
+      "creator": "0",
+      "email": "pisi@gmail.com",
+      "password": "123"
+    },
+      { "id": "2",
+      "name": "ethu",
+      "creator": "2",
+      "email": "ethu@gmail.com",
+      "password": "456"
+    },
+      { "id": "3",
+      "name": "ngapyuu",
+      "creator": "3",
+      "email": "ngapyuu@gmail.com",
+      "password": "789"
+    },
+      { "id": "4",
+      "name": "starlone",
+      "creator": "4",
+      "email": "starlone@gmail.com",
+      "password": "246"
+    }
+  ]
