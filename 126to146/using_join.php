@@ -30,7 +30,8 @@ $qry="SELECT
             --     END
             --     AS Teacher_type
             -- }
-            
+            tv.static_view AS Total_Static_View,
+            tv.unique_view AS Total_Unique_View
         FROM
             users2 AS ur
         JOIN
