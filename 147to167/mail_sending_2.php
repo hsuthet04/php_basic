@@ -113,4 +113,5 @@ ST;
 
 $header="Content-Type:text/html";
 $header="From:mmphptuto@gmail.com";
-mail($to,$subject,$message,$header);
+$bol=mail($to,$subject,$message,$header);
+echo $bol?"message sent":"message fail";
