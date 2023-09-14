@@ -1,14 +1,42 @@
 <?php 
+          
           include_once "views/top.php"; 
+                 
           include_once "views/nav.php"; 
+          include_once "system/membership.php";
           //include_once "views/header.php";    
           
           if(isset($_POST["submit"])){
-            $username=$_POST["username"];
+            
             $email=$_POST["email"];
             $password=$_POST["password"];
-            echo $username."_".$email."_".$password;
-         }
+
+            $ret=loginUser($email,$password);
+            $message="";
+            switch($ret){
+                case "login success":
+                    $message="login success";
+                    if(getSession("username")==="takoyaki" && getSession("email")==='takoyaki123@gmail.com'){
+                        header("Location:admin.php");
+                    }else{
+                        header("Location:index.php");
+                    }
+                    break;
+                case "login fail":
+                    $message="login fail";
+                    break;
+                case "auth fail":
+                    $message="username and format not in format";
+                    break;
+                default:
+            }
+            echo "<div class='container my-5'><div class='alert alert-warning alert-dismissible fade show' role='alert'>
+            
+            ".$message."
+          </div></div>";
+         
+        
+        }
     ?>
     <div class="container my-3">
     <div class="col-md-8 offset-md-2">
@@ -20,7 +48,7 @@
                 </div>
                 <div class="from-group">
                     <label for="password" class="english">Password</label>
-                    <input type="password" class="form-control english rounded-0" id="password">
+                    <input type="password" name="password" class="form-control english rounded-0" id="password">
                 </div>
                 <p></p>
                 <div class="row no-gutters justity-content-end">

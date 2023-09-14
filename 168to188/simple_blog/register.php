@@ -1,14 +1,51 @@
 <?php
-
+session_start();
 include_once "views/top.php"; 
 include_once "views/nav.php"; 
+require_once "system/membership.php";
+
  //include_once "views/header.php";     
  
  if(isset($_POST["submit"])){
     $username=$_POST["username"];
     $email=$_POST["email"];
     $password=$_POST["password"];
-    echo $username."_".$email."_".$password;
+    
+    $ret= registerUser($username,$email,$password);
+    $message="";
+
+        switch($ret){
+            case "register success":
+                $message="register success";
+                setSession('username',$username);
+                setSession('email',$email);
+                if($username==="takoyaki" && $email==="takoyaki123@gmail.com"){
+                    header("Location:admin.php");
+                }else{
+                    header("Location:index.php");
+                }
+                
+                break;
+            case "email is already in use":
+                $message="email is already in use";
+                break;
+            case "register fail":
+                $message="register fail";
+                break;
+            case "fail":
+                $message="authentication fail";
+                break;
+            default :break;
+        }
+        echo "<div class='container my-5'><div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+        " . $message . "
+      </div></div>";
+
+    
  }
     ?>
     <div class="container my-3">
